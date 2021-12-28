@@ -1,0 +1,19 @@
+---
+title: Xllauca
+name: Xavier Llauca
+username: xllauca
+bio: Bug Hunter, Security Researcher & Penetration Tester, based in Girón, Ecuador
+site: https://xavierllauca.com
+avatar: xllauca.png
+email: xllauca@mail.ru
+social:
+- title: github
+  url: https://github.com/xllauca
+- title: linkedin
+  url: https://www.linkedin.com/in/xllauca
+- title: youtube
+  url: https://www.youtube.com/channel/UCNlD-khNSTTphabjMaz0Mhg
+- title: facebook
+  url: https://www.facebook.com/xllauca
+---
+
