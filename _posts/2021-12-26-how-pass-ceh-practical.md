@@ -13,7 +13,7 @@ usemathjax: true
 <br />
 
 ### 0x0. **Intro**
-Este post resume  mis conclusiones sobre cómo aprobar en examen de CEH Practical en base a mi experiencia, las recomendaciones de <a target="_blank" href="https://www.linkedin.com/pulse/rese%C3%B1a-del-examen-para-la-certificaci%C3%B3n-ceh-practical-jorge-moya/?originalSubdomain=es">Jorge Moya</a>  y las mentorías de mis amigos de la Comunidad de Seguridad Ofensiva <a target="_blank" href="https://www.pwn.ec/">PwnEC</a>, las cuales fueron de gran ayuda durante mi proceso de preparación.
+Este post resume  mis conclusiones sobre cómo aprobar el examen de CEH Practical en base a mi experiencia, las recomendaciones de <a target="_blank" href="https://www.linkedin.com/pulse/rese%C3%B1a-del-examen-para-la-certificaci%C3%B3n-ceh-practical-jorge-moya/?originalSubdomain=es">Jorge Moya</a>  y las mentorías de mis amigos de la Comunidad de Seguridad Ofensiva <a target="_blank" href="https://www.pwn.ec/">PwnEC</a>, las cuales fueron de gran ayuda durante mi proceso de preparación.
 
 Mi intención no es incluir preguntas reales del examen, sino dar consejos a los candidatos al examen sobre cómo aprobarlo.
 
@@ -101,7 +101,7 @@ Mi intención no es incluir preguntas reales del examen, sino dar consejos a los
 ### 0x4. **¿Es el examen a libro abierto?**
 
 
-**Sí, yo tenia la libertad de buscar información en internet y/o consultar en los apuntes de mi computador,<span style="color:white"> incluso instalé software adicional en una maquina Windows</span>.**
+**Sí, yo tenia la libertad de buscar información en internet y/o consultar en los apuntes de mi computador,<span style="color:green"> incluso instalé software adicional en una maquina Windows</span>.**
 
 
 ### 0x5. **¿Recomendaciones durante el examen?**
