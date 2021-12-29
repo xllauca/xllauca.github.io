@@ -2,7 +2,7 @@
 title: Xllauca
 name: Xavier Llauca
 username: xllauca
-bio: Bug Hunter, Security Researcher & Penetration Tester, based in Girón, Ecuador
+bio: Bug Hunter, Security Researcher & Penetration Tester, based in Girón, Azuay, Ecuador.
 site: https://xavierllauca.com
 avatar: xllauca.png
 email: xllauca@mail.ru
