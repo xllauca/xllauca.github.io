@@ -58,7 +58,7 @@ Mi intención no es incluir preguntas reales del examen, sino dar consejos a los
       </tr>
       <tr>
         <th scope="row" rowspan=1>Sniffing</th>
-        <td><a target="_blank" href="https://www.wireshark.org/">Wireshark</a> (Wondows/Linux) </td>
+        <td><a target="_blank" href="https://www.wireshark.org/">Wireshark</a> (Windows/Linux) </td>
       </tr> 
       <tr>
         <th scope="row" rowspan=1>SQL Injection tools </th>

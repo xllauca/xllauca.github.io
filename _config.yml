@@ -25,12 +25,12 @@ urls:
 # Edit Author details (For multi authors check _data/authors.yml)
 
 author_logo: xllauca.png
-author: Xavier
-author_bio: Hi, my name is Xavier. I am from Ecuador.
+author: Xavier Llauca #Hi, I am Xavierrr ! de la pagina principal
+author_bio: Hi, my name is Xavier. I am a Computer Systems Engineer with three years of experience in cybersecurity and information security. My experience is focused on Ethical Hacking, Pentesting, Information Security Vulnerability Management and Creation of Information Security Policies, Processes and Procedures.
 author_email: "xllauca@mail.ru"
 author_location: Ecuador
 author_website_url: "https://xavierllauca.com"
-typewrite-text: Bug Hunter, Security Researcher & Penetration Tester!
+typewrite-text: Information Security Analyst, Security Researcher & Penetration Tester!
 hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
 # Experiences
@@ -41,12 +41,12 @@ author_work_experiences:
               designation: Software Engineer
               description: Worked on various Google Products
               visibility: false
-            - company_name: Microsoft
-              company_logo: microsoft.png
-              company_url: https://microsoft.com
-              designation: Azure Developer
-              description: Worked on various Azure Cloud Products
-              visibility: false
+            - company_name: Cooperativa de Ahorro y Crédito Santa Isabel Ltda.
+              company_logo: bank.png
+              company_url: https://www.coopsi.fin.ec/
+              designation: Responsable de Seguridad de Física e Información
+              description:  Gestión de vulnerabilidades de seguridad informática y Creación de políticas, procesos y procedimientos de seguridad de la información.
+              visibility: true
 
 # Education
 author_education_details:
