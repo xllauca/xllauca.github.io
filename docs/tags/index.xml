@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Xavier Llauca</title>
+    <link>https://xllauca.github.io/tags/</link>
+    <description>Recent content in Tags on Xavier Llauca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Feb 2024 17:07:46 -0500</lastBuildDate>
+    <atom:link href="https://xllauca.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cncf</title>
+      <link>https://xllauca.github.io/tags/cncf/</link>
+      <pubDate>Sat, 17 Feb 2024 17:07:46 -0500</pubDate>
+      <guid>https://xllauca.github.io/tags/cncf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containerd</title>
+      <link>https://xllauca.github.io/tags/containerd/</link>
+      <pubDate>Sat, 17 Feb 2024 17:07:46 -0500</pubDate>
+      <guid>https://xllauca.github.io/tags/containerd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lima</title>
+      <link>https://xllauca.github.io/tags/lima/</link>
+      <pubDate>Sat, 17 Feb 2024 17:07:46 -0500</pubDate>
+      <guid>https://xllauca.github.io/tags/lima/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

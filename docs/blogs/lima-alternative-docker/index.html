@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/logo.jpg type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:title" content="Lima: Una Alternativa a Docker en MacOS" />
+<meta property="og:description" content="Este es el resumen que quieres mostrar en la lista de artículos. Puedes controlar la longitud aquí solo aquí y nada mas por eso fui solo yo hasta que me pidas lo que hacer y no solo eso si no eso mismo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xllauca.github.io/blogs/lima-alternative-docker/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2024-02-17T17:07:46-05:00" />
+<meta property="article:modified_time" content="2024-02-17T17:07:46-05:00" /><meta property="og:site_name" content="Xavier Llauca" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Lima: Una Alternativa a Docker en MacOS"/>
+<meta name="twitter:description" content="Este es el resumen que quieres mostrar en la lista de artículos. Puedes controlar la longitud aquí solo aquí y nada mas por eso fui solo yo hasta que me pidas lo que hacer y no solo eso si no eso mismo."/>
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        width: .5em;
+        height: .5em;
+        background-color: var(--background-color);
+    }
+    
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px var(--background-color);
+        border-radius: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: var(--secondary-color);
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+  <title>
+Lima: Una Alternativa a Docker en MacOS | Xavier Llauca
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;        
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                Xavier Llauca
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Search'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Search' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blogs" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Lima: Una Alternativa a Docker en MacOS</h1>
+            <div class="text-center">
+              Xavier Llauca 
+              <small>|</small>
+              Feb 17, 2024
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <p><strong>En este post, explicaré cómo instalar, configurar y utilizar Lima (Linux Machines) en MacOS como alternativa a Docker Desktop.</strong></p>
+<h2 id="introducción">Introducción</h2>
+<p><strong>Lima</strong></p>
+<p><a href="https://www.cncf.io/projects/lima/">Lima</a> fue creado con el fin de promover <a href="https://containerd.io/">containerd</a> y nerdctl <a href="https://github.com/containerd/nerdctl">(contaiNERD ctl)</a> a los usuarios de MacOS; sin embargo, con el paso del tiempo, también lo podemos utilizar para aplicaciones que no son contenedores.</p>
+<h2 id="instalación-de-lima">Instalación de Lima</h2>
+<p>Ejecutamos el siguiente comando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install lima
+</span></span></code></pre></div><p><strong>Nota:</strong> En caso de que no tengas instalado Homebrew, puedes instalarlo siguiendo estos <a href="https://brew.sh/">pasos</a>.</p>
+<h2 id="uso-de-lima">Uso de Lima</h2>
+<p>Como mencionamos anteriormente, el propósito inicial de Lima era fomentar el uso de <code>containerd</code> y <code>nerdctl</code>. Sin embargo, en la actualidad, se ha ampliado su utilidad para diversos propósitos, como desplegar diferentes tipos de distros (VMs), motores de contenedores, constructores de imágenes de contenedores, orquestación de contenedores, entre otros.</p>
+<p>Para comenzar, ejecutamos <code>limactl start</code>, lo que desplegará una VM (runtime) con la plantilla predeterminada para ejecutar los contenedores. Esta instancia se despliega con las siguientes especificaciones predeterminadas:</p>
+<ul>
+<li>OS: Ubuntu (containerd/nerdctl).</li>
+<li>CPU: 4 cores</li>
+<li>Memory: 4 GiB</li>
+<li>Disk: 100 GiB</li>
+<li>Mounts: ~ (read-only), /tmp/lima (writable)</li>
+<li>SSH: 127.0.0.1:60022</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl start
+</span></span><span style="display:flex;"><span>? Creating an instance <span style="color:#e6db74">&#34;default&#34;</span>  <span style="color:#f92672">[</span>Use arrows to move, type to filter<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>&gt; Proceed with the current configuration
+</span></span><span style="display:flex;"><span>  Open an editor to review or modify the current configuration
+</span></span><span style="display:flex;"><span>  Choose another template <span style="color:#f92672">(</span>docker, podman, archlinux, fedora, ...<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  Exit
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>INFO<span style="color:#f92672">[</span>0029<span style="color:#f92672">]</span> READY. Run <span style="color:#e6db74">`</span>lima<span style="color:#e6db74">`</span> to open the shell.
+</span></span></code></pre></div><h2 id="templates">Templates</h2>
+<p>Para crear instancias, Lima utiliza <a href="https://lima-vm.io/docs/templates/">template</a> que son VMs listas para ser utilizadas, lo que nos ahorra tiempo de configuración. Para ver las plantillas disponibles, ejecutamos el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl create --list-templates
+</span></span><span style="display:flex;"><span>almalinux-8
+</span></span><span style="display:flex;"><span>almalinux-9
+</span></span><span style="display:flex;"><span>almalinux
+</span></span><span style="display:flex;"><span>alpine
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h4 id="personalizar-instancias">Personalizar Instancias</h4>
+<p>Además de seleccionar nuestra plantilla, podemos personalizar la instancia que vamos a crear o desplegar a través de parámetros que podemos consultar con el siguiente comando <code>limactl create --help</code>.</p>
+<p>A continuación, se muestra algunas de las opciones disponibles que tenemos para personalizar la instancia:</p>
+<ul>
+<li>&ndash;name=default: Set the instance name to “default”</li>
+<li>&ndash;cpus=4: Set the number of the CPUs to 4</li>
+<li>&ndash;memory=8: Set the amount of the memory to 8 GiB</li>
+<li>&ndash;vm-type=vz: Use Apple’s Virtualization.framework (vz) to enable Rosetta, virtiofs, and vzNAT</li>
+<li>&ndash;mount-type=virtiofs: Use virtiofs for better performance</li>
+<li>&ndash;mount-writable: Make the home mount (/Users/<USERNAME>) writable</li>
+<li>&ndash;network=vzNAT: Make the VM reachable from the host by its IP address
+template://fedora: Use Fedora</li>
+</ul>
+<h4 id="ejemplos">Ejemplos</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl create --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;developer&#34;</span> --containerd <span style="color:#e6db74">&#34;user&#34;</span> --cpus <span style="color:#ae81ff">2</span> --memory <span style="color:#ae81ff">2</span> --disk <span style="color:#ae81ff">10</span> --dns 1.1.1.1 --dns 8.8.8.8
+</span></span><span style="display:flex;"><span>limactl create --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stg&#34;</span> --containerd <span style="color:#e6db74">&#34;user&#34;</span> --cpus <span style="color:#ae81ff">2</span> --memory <span style="color:#ae81ff">2</span> --disk <span style="color:#ae81ff">10</span> --vm-type <span style="color:#e6db74">&#34;vz&#34;</span>
+</span></span><span style="display:flex;"><span>limactl create --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;prod&#34;</span> --containerd <span style="color:#e6db74">&#34;user&#34;</span> --cpus <span style="color:#ae81ff">2</span> --memory <span style="color:#ae81ff">2</span> --disk <span style="color:#ae81ff">10</span> --vm-type <span style="color:#e6db74">&#34;qemu&#34;</span>  --arch <span style="color:#e6db74">&#34;aarch64&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>limactl list
+</span></span><span style="display:flex;"><span>NAME         STATUS     SSH                VMTYPE    ARCH       CPUS    MEMORY    DISK      DIR
+</span></span><span style="display:flex;"><span>developer    Stopped    127.0.0.1:0        qemu      x86_64     <span style="color:#ae81ff">2</span>       2GiB      10GiB     ~/.lima/developer
+</span></span><span style="display:flex;"><span>prod         Stopped    127.0.0.1:0        qemu      aarch64    <span style="color:#ae81ff">2</span>       2GiB      10GiB     ~/.lima/prod
+</span></span><span style="display:flex;"><span>stg          Stopped    127.0.0.1:0        vz        x86_64     <span style="color:#ae81ff">2</span>       2GiB      10GiB     ~/.lima/stg
+</span></span></code></pre></div><h4 id="comandos-para-gestionar-las-instancias">Comandos para gestionar las instancias</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl list <span style="color:#75715e">#listar las instancias  existentes</span>
+</span></span><span style="display:flex;"><span>limactl start developer <span style="color:#75715e">#iniciar la instancia  &#39;developer&#39;</span>
+</span></span><span style="display:flex;"><span>limactl shell developer  <span style="color:#75715e">#acceder a la instancia &#39;developer&#39;</span>
+</span></span><span style="display:flex;"><span>limactl stop developer <span style="color:#75715e">#detener la instancia &#39;developer&#39;</span>
+</span></span><span style="display:flex;"><span>limactl delete prod <span style="color:#75715e">#eliminar la instancia &#39;developer&#39;</span>
+</span></span></code></pre></div><h4 id="editar-el-archivo-de-configuración-de-una-instancia-creada">Editar el archivo de configuración de una instancia creada.</h4>
+<p>Primero, identificamos el nombre de la instancia que necesitamos editar. En este caso, editaremos la instancia con el nombre <code>alpine</code>. Es importante tener en cuenta que la ruta del archivo dependerá del nombre de la instancia: <code>$HOME/.lima/&lt;nombre-instancia&gt;/lima.yaml</code>. Para editar el archivo utilizamos un editor de texto de nuestra preferencia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat $HOME/.lima/alpine/lima.yaml
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This template requires Lima v0.7.0 or later.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using the Alpine 3.19 aarch64 image with vmType=vz requires macOS Ventura 13.3 or later.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>images:
+</span></span><span style="display:flex;"><span>  - location: <span style="color:#e6db74">&#34;https://github.com/lima-vm/alpine-lima/releases/download/v0.2.35/alpine-lima-std-3.19.0-x86_64.iso&#34;</span>
+</span></span><span style="display:flex;"><span>    arch: <span style="color:#e6db74">&#34;x86_64&#34;</span>
+</span></span><span style="display:flex;"><span>    digest: <span style="color:#e6db74">&#34;sha512:e02599dc7fc4dc279d66d800f6edc68f6f112c4b370d4c74f43040214c53b23ae4c903ce56c7083fd56d5027ec33711d30d1c2e71836c60dc3bf639f76d4fa0e&#34;</span>
+</span></span><span style="display:flex;"><span>  - location: <span style="color:#e6db74">&#34;https://github.com/lima-vm/alpine-lima/releases/download/v0.2.35/alpine-lima-std-3.19.0-aarch64.iso&#34;</span>
+</span></span><span style="display:flex;"><span>    arch: <span style="color:#e6db74">&#34;aarch64&#34;</span>
+</span></span><span style="display:flex;"><span>    digest: <span style="color:#e6db74">&#34;sha512:13e50601ee65af5d7a6dfd30bb41fd89f8bf806ecdb516c61fe238c3cf3b57cf67469418a99f329bb4c343e3387e6e0fd4fe20501cfd501f031f7244adc67215&#34;</span>
+</span></span><span style="display:flex;"><span>mounts:
+</span></span><span style="display:flex;"><span>  - location: <span style="color:#e6db74">&#34;~&#34;</span>
+</span></span><span style="display:flex;"><span>  - location: <span style="color:#e6db74">&#34;/tmp/lima&#34;</span>
+</span></span><span style="display:flex;"><span>    writable: true
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The built-in containerd installer does not support Alpine currently.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hint: use the &#34;rd&#34; ISO instead of the &#34;std&#34; ISO to enable containerd: https://github.com/lima-vm/alpine-lima/releases/</span>
+</span></span><span style="display:flex;"><span>containerd:
+</span></span><span style="display:flex;"><span>  system: false
+</span></span><span style="display:flex;"><span>  user: false
+</span></span><span style="display:flex;"><span>cpus: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>memory: 2GiB
+</span></span><span style="display:flex;"><span>disk: 10GiB
+</span></span></code></pre></div><h3 id="container-engines">Container engines:</h3>
+<h4 id="containerd">Containerd</h4>
+<p>Como se menciona en una de las secciones anteriores cuando ejecutamos <code>lima start</code> se despliega una instancia por defecto con containerd.</p>
+<p>Para la gestión de los contenedores, debemos utilizar el comando <code>lima nerdctl</code> desde nuestra máquina host o acceder a la VM desplegada (runtime) mediante el comando <code>lima</code>, y luego ejecutar el comando <code>nerdctl</code> con sus respectivas opciones y parámetros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lima nerdctl run -d -p 127.0.0.1:80:80 nginx:alpine <span style="color:#75715e"># Para desplegar contenedores</span>
+</span></span></code></pre></div><h4 id="podman">Podman</h4>
+<p>Para crear una instancia de Lima con Podman sin root, utilice la plantilla podman:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl start --name<span style="color:#f92672">=</span>podman template://podman
+</span></span></code></pre></div><p>Para crear una instancia de Lima con Podman rootful, utilice la plantilla podman-rootful:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl start --name<span style="color:#f92672">=</span>podman template://podman-rootful
+</span></span></code></pre></div><h4 id="gestionar-contenedores">Gestionar contenedores</h4>
+<p><strong>Opción 1:</strong> Acceder a la instancia con <code>limactl shell podman</code> una vez dentro podemos ejecutar los típicos comandos de podman.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>xllauca@lima-podman xllauca<span style="color:#f92672">]</span>$ podman run hello-world
+</span></span><span style="display:flex;"><span>!... Hello Podman World ...!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>         .--<span style="color:#e6db74">&#34;--.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       / -     - \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      / (O)   (O) \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   ~~~| -=(,Y,)=- |
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    .---. /`  \   |~~
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> ~/  o  o \~~~~.----. ~~
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  | =(X)= |~  / (O (O) \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   ~~~~~~~  ~| =(Y_)=-  |
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ~~~~    ~~~|   U      |~~
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Project:   https://github.com/containers/podman
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Website:   https://podman.io
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Desktop:   https://podman-desktop.io
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Documents: https://docs.podman.io
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">YouTube:   https://youtube.com/@Podman
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">X/Twitter: @Podman_io
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Mastodon:  @Podman_io@fosstodon.org
+</span></span></span></code></pre></div><p><strong>Opción 2:</strong> Desde la maquina host con el comando <code>podman.lima</code>, los argumentos y parámetros son los mismo a que si hubiéramos instalado &ldquo;podman cli&rdquo; en nuestro Mac.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>podman.lima run -d -p 127.0.0.1:80:80 nginx:alpine
+</span></span></code></pre></div><h5 id="integrar-lima-con-podman-desktop">Integrar lima con Podman Desktop</h5>
+<p>Vaya a Configuración &gt; Preferencias &gt; Extensión: Lima, para cambiar el nombre y tipo de instancia.</p>
+<ul>
+<li>Podman (por defecto)
+<ul>
+<li>Tipo: podman</li>
+<li>Nombre: podman (nombre de la instancia creada con lima)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/posts/lima/image.png" alt="Texto alternativo"></p>
+<p>Posterior a eso reiniciamos la aplicación y podremos visualizar los contenedores antes desplegados con la opción 1 y 2.
+<img src="/posts/lima/conte.png" alt="alt text"></p>
+<h4 id="docker">Docker</h4>
+<p>Para crear una instancia de Lima con Docker sin root, utilice la plantilla Docker:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl start --name<span style="color:#f92672">=</span>docker template://docker
+</span></span></code></pre></div><p>Para crear una instancia de Lima con Docker rootful, utilice la plantilla docker-rootful:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl start --name<span style="color:#f92672">=</span>docker template://docker-rootful
+</span></span></code></pre></div><p><strong>¡Importante!</strong></p>
+<p>Para gestionar los contenedores desde nuestro host, Lima nos muestra mensajes de ayuda después de desplegar la instancia. Sin embargo, necesitamos tener instalado <strong><em>docker</em></strong> en nuestro Mac, lo cual no tiene mucho sentido. Por ello, utilizaremos el comando <code>docker.lima</code> desde nuestro Mac.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker.lima context list <span style="color:#75715e">#listamos los contextos disponibles</span>
+</span></span><span style="display:flex;"><span>docker.lima context show <span style="color:#75715e">#verificamos el contexto actual</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker.lima run -d -p 127.0.0.1:80:80 nginx:alpine
+</span></span><span style="display:flex;"><span>577fa6abc8225bdb2ad94632adc423fd18f1c7cb306501aa9c9b19131c8b4383
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker.lima ps
+</span></span><span style="display:flex;"><span>CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
+</span></span><span style="display:flex;"><span>577fa6abc822   nginx:alpine   <span style="color:#e6db74">&#34;/docker-entrypoint.…&#34;</span>   <span style="color:#ae81ff">3</span> seconds ago   Up <span style="color:#ae81ff">2</span> seconds   127.0.0.1:80-&gt;80/tcp   admiring_meitner
+</span></span></code></pre></div><h3 id="orquestación-de-contenedores">Orquestación de contenedores</h3>
+<h4 id="kubernetes">Kubernetes</h4>
+<p>Para desplegar un cluster de kubernetes ejecutamos el siguiente comando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>limactl start template://k8s
+</span></span></code></pre></div><p>Para gestionar nuestro cluster tenemos dos opciones disponibles:</p>
+<p><strong>Opción 1:</strong> Tener instalado <code>kubectl</code> en nuestra maquina host, posterior es eso exportar KUBECONFIG a nuestra shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export KUBECONFIG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/mysuer/.lima/k8s/copied-from-guest/kubeconfig.yaml&#34;</span>
+</span></span><span style="display:flex;"><span>kubectl run test --image<span style="color:#f92672">=</span>nginx
+</span></span></code></pre></div><p><strong>Opción 2:</strong> Gestionar el cluster con el comando de lima <code>limactl shell k8s kubectl</code>, podriamos crear un alias para mejor comodidad y guardar en nuestor shell. sin embargo los manifiestos debemos crear dentro de la instancia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>alias k<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;limactl shell k8s kubectl&#34;</span>
+</span></span><span style="display:flex;"><span>k get nodes -owide
+</span></span><span style="display:flex;"><span>NAME       STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+</span></span><span style="display:flex;"><span>lima-k8s   Ready    control-plane   39m   v1.29.2   192.168.5.15   &lt;none&gt;        Ubuntu 22.04.3 LTS   5.15.0-92-generic   containerd://1.7.13
+</span></span></code></pre></div><p><strong>Nota:</strong> Lima implementa una máquina virtual que simultáneamente cumple las funciones de control-plane y nodo. Sin embargo, se presenta una limitación en caso de requerir alta disponibilidad (HA) en el control-plane o al agregar más nodos.</p>
+<h4 id="k3s">k3s</h4>
+<h3 id="distros">Distros</h3>
+<h4 id="ubuntu">Ubuntu</h4>
+<h4 id="opensuse">opensuse</h4>
+<!-- [![Star History Chart](https://api.star-history.com/svg?repos=lima-vm/lima&type=Date)](https://star-history.com/#lima-vm/lima) -->
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#instalación-de-lima">Instalación de Lima</a></li>
+    <li><a href="#uso-de-lima">Uso de Lima</a></li>
+    <li><a href="#templates">Templates</a>
+      <ul>
+        <li></li>
+        <li><a href="#container-engines">Container engines:</a></li>
+        <li><a href="#orquestación-de-contenedores">Orquestación de contenedores</a></li>
+        <li><a href="#distros">Distros</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://xllauca.github.io/tags/cncf" target="_blank">cncf</a></li>
+              
+              <li class="list-inline-item"><a href="https://xllauca.github.io/tags/lima" target="_blank">lima</a></li>
+              
+              <li class="list-inline-item"><a href="https://xllauca.github.io/tags/containerd" target="_blank">containerd</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Lima%3a%20Una%20Alternativa%20a%20Docker%20en%20MacOS&url=https%3a%2f%2fxllauca.github.io%2fblogs%2flima-alternative-docker%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Lima%3a%20Una%20Alternativa%20a%20Docker%20en%20MacOS: https%3a%2f%2fxllauca.github.io%2fblogs%2flima-alternative-docker%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Lima%3a%20Una%20Alternativa%20a%20Docker%20en%20MacOS&amp;body=Check%20out%20this%20site https%3a%2f%2fxllauca.github.io%2fblogs%2flima-alternative-docker%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    <div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="pb-2">
+                
+            </div>
+            Xavier Llauca &copy; 2024  All rights reserved
+            
+        </div>
+    </div>
+</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>
