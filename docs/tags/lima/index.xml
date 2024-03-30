@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lima on Xavier Llauca</title>
-    <link>https://xllauca.github.io/tags/lima/</link>
+    <link>http://localhost:1313/tags/lima/</link>
     <description>Recent content in Lima on Xavier Llauca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Feb 2024 17:07:46 -0500</lastBuildDate>
-    <atom:link href="https://xllauca.github.io/tags/lima/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/lima/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lima: Una Alternativa a Docker en MacOS</title>
-      <link>https://xllauca.github.io/blogs/lima-alternative-docker/</link>
+      <link>http://localhost:1313/blogs/lima-alternative-docker/</link>
       <pubDate>Sat, 17 Feb 2024 17:07:46 -0500</pubDate>
-      <guid>https://xllauca.github.io/blogs/lima-alternative-docker/</guid>
+      <guid>http://localhost:1313/blogs/lima-alternative-docker/</guid>
       <description>Este es el resumen que quieres mostrar en la lista de artículos. Puedes controlar la longitud aquí solo aquí y nada mas por eso fui solo yo hasta que me pidas lo que hacer y no solo eso si no eso mismo.</description>
     </item>
   </channel>

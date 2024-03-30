@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://xllauca.github.io/blogs/</loc>
+    <loc>http://localhost:1313/blogs/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/tags/cncf/</loc>
+    <loc>http://localhost:1313/tags/cncf/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/tags/containerd/</loc>
+    <loc>http://localhost:1313/tags/containerd/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/tags/lima/</loc>
+    <loc>http://localhost:1313/tags/lima/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/blogs/lima-alternative-docker/</loc>
+    <loc>http://localhost:1313/blogs/lima-alternative-docker/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-02-17T17:07:46-05:00</lastmod>
   </url><url>
-    <loc>https://xllauca.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
