@@ -6,8 +6,15 @@
     <description>Recent content on Hugo Profile</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Aug 2024 00:28:22 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2024 20:00:08 -0500</lastBuildDate>
     <atom:link href="https://xavierllauca.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best</title>
+      <link>https://xavierllauca.com/blogs/best/</link>
+      <pubDate>Sat, 07 Sep 2024 20:00:08 -0500</pubDate>
+      <guid>https://xavierllauca.com/blogs/best/</guid>
+      <description>this a default summary</description>
+    </item>
     <item>
       <title>Deploying a Civo Kubernetes Cluster with Opentofu</title>
       <link>https://xavierllauca.com/blogs/civo-k8s-cluster-with-opentofu/</link>
