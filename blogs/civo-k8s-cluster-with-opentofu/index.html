@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href=/fav.png type="image/gif">
+<link rel="icon" href=/fav.png type="image/ico">
 
 <meta property="og:title" content="Deploying a Civo Kubernetes Cluster with Opentofu">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/blogs/civo-k8s-cluster-with-opentofu/">
+<meta property="og:url" content="https://xavierllauca.com/blogs/civo-k8s-cluster-with-opentofu/">
 <meta property="og:image" content="/images/post-tofu.jpg">
 <meta property="og:description" content="This post explains how to deploy a Civo Kubernetes cluster using OpenTofu. :)">
-<meta property="og:site_name" content="Hugo Profile">
+<meta property="og:site_name" content="Xavier Llauca">
 <meta property="og:locale" content="en">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,22 @@
 
 
 
-<meta property="og:url" content="http://localhost:1313/blogs/civo-k8s-cluster-with-opentofu/">
-  <meta property="og:site_name" content="Hugo Profile">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-0V4GFK0457"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-0V4GFK0457');
+        }
+      </script>
+<meta property="og:url" content="https://xavierllauca.com/blogs/civo-k8s-cluster-with-opentofu/">
+  <meta property="og:site_name" content="Xavier Llauca">
   <meta property="og:title" content="Deploying a Civo Kubernetes Cluster with Opentofu">
   <meta property="og:description" content="This post explains how to deploy a Civo Kubernetes cluster using OpenTofu. :)">
   <meta property="og:locale" content="en_us">
@@ -133,7 +147,7 @@
   
 
   <title>
-Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
+Deploying a Civo Kubernetes Cluster with Opentofu | Xavier Llauca
 
   </title>
 </head>
@@ -194,15 +208,13 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="/fav.png" width="30" height="30"
-                    class="d-inline-block align-top">
-                Hugo Profile
+                Xavier Llauca
                 
             </a>
 
             
                 <div>
-                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Search'
                         aria-label="Search" oninput="searchOnChange(event)">
                 </div>
             
@@ -221,62 +233,21 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
                     
                         <li class="nav-item navbar-text d-block d-md-none">
                             <div class="nav-link">
-                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Search' aria-label="Search" oninput="searchOnChange(event)">
                             </div>
                         </li>
                     
 
                     
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#about" aria-label="about">
-                            About Me
-                        </a>
-                    </li>
+
                     
 
                     
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#experience"
-                            aria-label="experience">
-                            Experience
-                        </a>
-                    </li>
+
                     
 
                     
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#education"
-                            aria-label="education">
-                            Education
-                        </a>
-                    </li>
-                    
 
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#projects"
-                            aria-label="projects">
-                            Projects
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#achievements"
-                            aria-label="achievements">
-                            Achievements
-                        </a>
-                    </li>
-                    
-
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/#contact"
-                            aria-label="contact">
-                            Contact
-                        </a>
-                    </li>
                     
 
                     
@@ -289,16 +260,6 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
                         <a class="nav-link" href="/blogs" title="Blog posts">
                             
                             Blog
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/gallery" title="Blog posts">
-                            
-                            Gallery
                         </a>
                     </li>
                     
@@ -385,10 +346,10 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
 <li><a href="https://kubernetes.io/docs/tasks/tools/#kubectl">Kubectl</a></li>
 </ul>
 <p><strong>Useful Commands</strong> to list and verify different versions, applications, and node sizes, which will help us define the configuration of our Kubernetes cluster before deployment.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>civo region ls                      <span style="color:#75715e">#List available regions.</span>
-</span></span><span style="display:flex;"><span>civo kubernetes versions            <span style="color:#75715e">#List available Kubernetes versions.</span>
-</span></span><span style="display:flex;"><span>civo kubernetes applications ls     <span style="color:#75715e">#List available Kubernetes applications.</span>
-</span></span><span style="display:flex;"><span>civo kubernetes size                <span style="color:#75715e">#List available Kubernetes node sizes.</span>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>civo region ls                      <span style="color:#7f848e">#List available regions.</span>
+</span></span><span style="display:flex;"><span>civo kubernetes versions            <span style="color:#7f848e">#List available Kubernetes versions.</span>
+</span></span><span style="display:flex;"><span>civo kubernetes applications ls     <span style="color:#7f848e">#List available Kubernetes applications.</span>
+</span></span><span style="display:flex;"><span>civo kubernetes size                <span style="color:#7f848e">#List available Kubernetes node sizes.</span>
 </span></span></code></pre></div><h2 id="configure-backend">Configure Backend</h2>
 <p><strong>Setting Up Terraform Cloud for Civo Deployment</strong></p>
 <p>In this example, we use Terraform Cloud as the backend, so it is necessary to create an account in Terraform Cloud, define an organization, create a workspace, and configure the CIVO_TOKEN variable. This variable is essential to grant Terraform Cloud the necessary permissions to access Civo and deploy the required resources.</p>
@@ -399,200 +360,200 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
 <h2 id="defining-a-kubernetes-resource">Defining a Kubernetes resource</h2>
 <p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">providers.tf</span></p>
 <p>In this section, we define the <a href="https://registry.terraform.io/providers/civo/civo/latest">provider</a>, the <a href="https://opentofu.org/docs/cli/cloud/settings/#the-cloud-block">backend</a>, and configure the corresponding variables: the region where the cluster will be deployed and the token that OpenTofu uses to authenticate with Civo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">terraform</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">required_providers</span> {
-</span></span><span style="display:flex;"><span>    civo <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>      source  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;civo/civo&#34;</span>
-</span></span><span style="display:flex;"><span>      version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.1.1&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#c678dd">terraform</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">required_providers</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    civo</span> <span style="color:#56b6c2">=</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">      source</span>  <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;civo/civo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">      version</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;1.1.1&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cloud</span> {
-</span></span><span style="display:flex;"><span>    organization <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xllauca&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    ## Required for Terraform Enterprise; Defaults to app.terraform.io for Terraform Cloud
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;app.terraform.io&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">workspaces</span> {
-</span></span><span style="display:flex;"><span>      name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;prod&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">cloud</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    organization</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;xllauca&#34;</span><span style="color:#7f848e">
+</span></span></span><span style="display:flex;"><span><span style="color:#7f848e">    ## Required for Terraform Enterprise; Defaults to app.terraform.io for Terraform Cloud
+</span></span></span><span style="display:flex;"><span><span style="color:#7f848e"></span><span style="color:#e06c75">    hostname</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;app.terraform.io&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">workspaces</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">      name</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;prod&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;civo&#34;</span> {
-</span></span><span style="display:flex;"><span>  token  <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">CIVO_TOKEN</span>
-</span></span><span style="display:flex;"><span>  region <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">region</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">provider</span> <span style="color:#98c379">&#34;civo&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  token</span>  <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">CIVO_TOKEN</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  region</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">region</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">network.tf</span></p>
 <p>In this section, we define the network region that we will use for our cluster.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;civo_network&#34; &#34;network_cluster_civo&#34;</span> {
-</span></span><span style="display:flex;"><span>  label  <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">network_name</span>
-</span></span><span style="display:flex;"><span>  region <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">region</span>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#c678dd">resource</span> <span style="color:#98c379">&#34;civo_network&#34; &#34;network_cluster_civo&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  label</span>  <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">network_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  region</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">region</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">firewall.tf</span></p>
 <p>In the firewall resource, we define which ports need to be open on our cluster, customizing them according to our needs. In this case, we have configured an ingress rule for port 6443 and an egress rule that allows all traffic. To ensure that the cluster is only accessible from trusted IPs, we need to specify only our public IP in the <code>cidr = var.authorized_networks</code> variable, thus avoiding exposing the cluster to the entire Internet.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;civo_firewall&#34; &#34;civo_firewall_cluster&#34;</span> {
-</span></span><span style="display:flex;"><span>  name                 <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">firewall_name</span>
-</span></span><span style="display:flex;"><span>  region               <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">region</span>
-</span></span><span style="display:flex;"><span>  network_id           <span style="color:#f92672">=</span> <span style="color:#66d9ef">civo_network</span>.<span style="color:#66d9ef">network_cluster_civo</span>.<span style="color:#66d9ef">id</span>
-</span></span><span style="display:flex;"><span>  create_default_rules <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#c678dd">resource</span> <span style="color:#98c379">&#34;civo_firewall&#34; &#34;civo_firewall_cluster&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  name</span>                 <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">firewall_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  region</span>               <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">region</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  network_id</span>           <span style="color:#56b6c2">=</span> <span style="color:#c678dd">civo_network</span>.<span style="color:#c678dd">network_cluster_civo</span>.<span style="color:#c678dd">id</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  create_default_rules</span> <span style="color:#56b6c2">=</span> <span style="color:#e5c07b">false</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ingress_rule</span> {
-</span></span><span style="display:flex;"><span>    label      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;k8s&#34;</span>
-</span></span><span style="display:flex;"><span>    protocol   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tcp&#34;</span>
-</span></span><span style="display:flex;"><span>    port_range <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;6443&#34;</span>
-</span></span><span style="display:flex;"><span>    cidr       <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">authorized_networks</span>
-</span></span><span style="display:flex;"><span>    action     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;allow&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">ingress_rule</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    label</span>      <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;k8s&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    protocol</span>   <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;tcp&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    port_range</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;6443&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    cidr</span>       <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">authorized_networks</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    action</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;allow&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ingress_rule</span> {
-</span></span><span style="display:flex;"><span>    label      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ssh&#34;</span>
-</span></span><span style="display:flex;"><span>    protocol   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tcp&#34;</span>
-</span></span><span style="display:flex;"><span>    port_range <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;22&#34;</span>
-</span></span><span style="display:flex;"><span>    cidr       <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">authorized_networks</span>
-</span></span><span style="display:flex;"><span>    action     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;allow&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">ingress_rule</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    label</span>      <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;ssh&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    protocol</span>   <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;tcp&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    port_range</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;22&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    cidr</span>       <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">authorized_networks</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    action</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;allow&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">egress_rule</span> {
-</span></span><span style="display:flex;"><span>    label      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;all&#34;</span>
-</span></span><span style="display:flex;"><span>    protocol   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tcp&#34;</span>
-</span></span><span style="display:flex;"><span>    port_range <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1-65535&#34;</span>
-</span></span><span style="display:flex;"><span>    cidr       <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>]
-</span></span><span style="display:flex;"><span>    action     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;allow&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">egress_rule</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    label</span>      <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;all&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    protocol</span>   <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;tcp&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    port_range</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;1-65535&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    cidr</span>       <span style="color:#56b6c2">=</span> [<span style="color:#98c379">&#34;0.0.0.0/0&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    action</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;allow&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">node_pools.tf</span></p>
 <p>Here, we define an additional node group (optional) for our Kubernetes cluster, as it is possible to add multiple node groups to the same cluster. In this resource, we can specify the number of nodes and the instance type (size) for this group. Currently, Civo offers several options, such as Standard, Performance, CPU-Optimized, and RAM Optimized, each with different characteristics. Additionally, we can choose whether the nodes in this group will have a public IP.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;civo_kubernetes_node_pool&#34; &#34;back-end_pool&#34;</span> {
-</span></span><span style="display:flex;"><span>  count <span style="color:#f92672">=</span> <span style="color:#66d9ef">length</span>(<span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_pools</span>)
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#c678dd">resource</span> <span style="color:#98c379">&#34;civo_kubernetes_node_pool&#34; &#34;back-end_pool&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  count</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">length</span>(<span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_pools</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  cluster_id <span style="color:#f92672">=</span> <span style="color:#66d9ef">civo_kubernetes_cluster</span>.<span style="color:#66d9ef">civo_cluster</span>.<span style="color:#66d9ef">id</span>
-</span></span><span style="display:flex;"><span>  label      <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_pools</span>[<span style="color:#66d9ef">count</span>.<span style="color:#66d9ef">index</span>].<span style="color:#66d9ef">label</span>
-</span></span><span style="display:flex;"><span>  node_count <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_pools</span>[<span style="color:#66d9ef">count</span>.<span style="color:#66d9ef">index</span>].<span style="color:#66d9ef">node_count</span>
-</span></span><span style="display:flex;"><span>  size       <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_pools</span>[<span style="color:#66d9ef">count</span>.<span style="color:#66d9ef">index</span>].<span style="color:#66d9ef">size</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  cluster_id</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">civo_kubernetes_cluster</span>.<span style="color:#c678dd">civo_cluster</span>.<span style="color:#c678dd">id</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  label</span>      <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_pools</span>[<span style="color:#c678dd">count</span>.<span style="color:#c678dd">index</span>].<span style="color:#c678dd">label</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  node_count</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_pools</span>[<span style="color:#c678dd">count</span>.<span style="color:#c678dd">index</span>].<span style="color:#c678dd">node_count</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  size</span>       <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_pools</span>[<span style="color:#c678dd">count</span>.<span style="color:#c678dd">index</span>].<span style="color:#c678dd">size</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">cluster.tf</span></p>
 <p>In this section, we define the Kubernetes cluster. In the reference arguments, we specify the resources defined in the previous files, excluding the Container Network Interface (CNI) and the node pool. Currently, Civo offers CNI options such as <code>cilium</code> and <code>flannel</code>. Unlike the <code>civo_kubernetes_node_pool</code> resource, the node <code>pool</code> defined here is mandatory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;civo_kubernetes_cluster&#34; &#34;civo_cluster&#34;</span> {
-</span></span><span style="display:flex;"><span>  name               <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">cluster_name</span>
-</span></span><span style="display:flex;"><span>  kubernetes_version <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">kubernetes_version</span>
-</span></span><span style="display:flex;"><span>  network_id         <span style="color:#f92672">=</span> <span style="color:#66d9ef">civo_network</span>.<span style="color:#66d9ef">network_cluster_civo</span>.<span style="color:#66d9ef">id</span>
-</span></span><span style="display:flex;"><span>  firewall_id        <span style="color:#f92672">=</span> <span style="color:#66d9ef">civo_firewall</span>.<span style="color:#66d9ef">civo_firewall_cluster</span>.<span style="color:#66d9ef">id</span>
-</span></span><span style="display:flex;"><span>  region             <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">region</span>
-</span></span><span style="display:flex;"><span>  applications       <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">applications</span>
-</span></span><span style="display:flex;"><span>  tags               <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">tags</span>
-</span></span><span style="display:flex;"><span>  cni                <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">cni</span>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#c678dd">resource</span> <span style="color:#98c379">&#34;civo_kubernetes_cluster&#34; &#34;civo_cluster&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  name</span>               <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">cluster_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  kubernetes_version</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">kubernetes_version</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  network_id</span>         <span style="color:#56b6c2">=</span> <span style="color:#c678dd">civo_network</span>.<span style="color:#c678dd">network_cluster_civo</span>.<span style="color:#c678dd">id</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  firewall_id</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">civo_firewall</span>.<span style="color:#c678dd">civo_firewall_cluster</span>.<span style="color:#c678dd">id</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  region</span>             <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">region</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  applications</span>       <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">applications</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  tags</span>               <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">tags</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  cni</span>                <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">cni</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">pools</span> {
-</span></span><span style="display:flex;"><span>    label      <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_label</span>
-</span></span><span style="display:flex;"><span>    node_count <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_count</span>
-</span></span><span style="display:flex;"><span>    size       <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">node_instance_size</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">pools</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    label</span>      <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_label</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    node_count</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_count</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    size</span>       <span style="color:#56b6c2">=</span> <span style="color:#c678dd">var</span>.<span style="color:#c678dd">node_instance_size</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">variables.tf</span></p>
 <p>In this file, we define all the variables referenced in other files. We can assign some default values, but we must be especially careful with variables containing sensitive information, such as CIVO_TOKEN and others we wish to protect. To ensure the security of these variables and avoid exposing them, we will define and assign their values in Terraform Cloud.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;CIVO_TOKEN&#34;</span> {
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Personal Access Token to access the CIVO API)&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;CIVO_TOKEN&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Personal Access Token to access the CIVO API)&#34;</span>
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;region&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The region in which the cluster should be created.&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NYC1&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;cluster_name&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name of the kubernetes cluster&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;core&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;region&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;The region in which the cluster should be created.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;NYC1&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;firewall_name&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name of the kubernetes cluster firewall&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;core&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;cluster_name&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;name of the kubernetes cluster&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;core&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;node_label&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Label of the main node pool&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;core&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;firewall_name&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;name of the kubernetes cluster firewall&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;core&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;node_count&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">number</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Number of nodes into the cluster&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;node_label&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Label of the main node pool&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;core&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;node_instance_size&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Instance type of the target nodes.&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;g4s.kube.medium&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;node_count&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">number</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Number of nodes into the cluster&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#d19a66">3</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;cni&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The cni for the k3s to install&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cilium&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;node_instance_size&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Instance type of the target nodes.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;g4s.kube.medium&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;kubernetes_version&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;supported version of the k3s cluster&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;cni&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;The cni for the k3s to install&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;cilium&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;network_name&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name of the network to be created&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;kubernetes_version&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;supported version of the k3s cluster&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;authorized_networks&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">set</span>(<span style="color:#66d9ef">string</span>)
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Authorized networks for Kubernetes API server&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;0.0.0.0/0&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;network_name&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;name of the network to be created&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;tags&#34;</span> {
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tags&#34;</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;terraform&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;authorized_networks&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">set</span>(<span style="color:#c678dd">string</span>)
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Authorized networks for Kubernetes API server&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> [<span style="color:#98c379">&#34;0.0.0.0/0&#34;</span>]
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;node_pools&#34;</span> {
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Addons node pools&#34;</span>
-</span></span><span style="display:flex;"><span>  type <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#66d9ef">object</span>({
-</span></span><span style="display:flex;"><span>    label      <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>    node_count <span style="color:#f92672">=</span> <span style="color:#66d9ef">number</span>
-</span></span><span style="display:flex;"><span>    size       <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;tags&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Tags&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;terraform&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;node_pools&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Addons node pools&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">list</span>(<span style="color:#c678dd">object</span>({
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    label</span>      <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    node_count</span> <span style="color:#56b6c2">=</span> <span style="color:#c678dd">number</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    size</span>       <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
 </span></span><span style="display:flex;"><span>  }))
-</span></span><span style="display:flex;"><span>  default <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span> <span style="color:#56b6c2">=</span> []
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;applications&#34;</span> {
-</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Comma Separated list of Application to be installed&#34;</span>
-</span></span><span style="display:flex;"><span>  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
-</span></span><span style="display:flex;"><span>  default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;-traefik2-nodeport, metrics-server&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">variable</span> <span style="color:#98c379">&#34;applications&#34;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  description</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;Comma Separated list of Application to be installed&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  type</span>        <span style="color:#56b6c2">=</span> <span style="color:#c678dd">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">  default</span>     <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;-traefik2-nodeport, metrics-server&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">terraform.tfvars</span></p>
 <p>In this file, we define values for variables that do not contain sensitive information or whose exposure does not pose a security risk.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span>region             <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NYC1&#34;</span>
-</span></span><span style="display:flex;"><span>cluster_name       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;k3s-civo-opentofu&#34;</span>
-</span></span><span style="display:flex;"><span>firewall_name      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;k3s-production&#34;</span>
-</span></span><span style="display:flex;"><span>kubernetes_version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.29.2-k3s1&#34;</span>
-</span></span><span style="display:flex;"><span>node_label         <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pool-production-front-end&#34;</span>
-</span></span><span style="display:flex;"><span>node_instance_size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;g4s.kube.medium&#34;</span>
-</span></span><span style="display:flex;"><span>node_count         <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>cni                <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cilium&#34;</span>
-</span></span><span style="display:flex;"><span>network_name       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ks3-production&#34;</span>
-</span></span><span style="display:flex;"><span>applications       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;metrics-server,argo-rollouts,argo-workflows,argocd&#34;</span>
-</span></span><span style="display:flex;"><span>node_pools <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#e06c75">region</span>             <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;NYC1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">cluster_name</span>       <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;k3s-civo-opentofu&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">firewall_name</span>      <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;k3s-production&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_version</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;1.29.2-k3s1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">node_label</span>         <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;pool-production-front-end&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">node_instance_size</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;g4s.kube.medium&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">node_count</span>         <span style="color:#56b6c2">=</span> <span style="color:#d19a66">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">cni</span>                <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;cilium&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">network_name</span>       <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;ks3-production&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">applications</span>       <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;metrics-server,argo-rollouts,argo-workflows,argocd&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">node_pools</span> <span style="color:#56b6c2">=</span> [
 </span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    label      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pool-production-back-end&#34;</span>
-</span></span><span style="display:flex;"><span>    node_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>    size       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;g4s.kube.small&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    label</span>      <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;pool-production-back-end&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    node_count</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">    size</span>       <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;g4s.kube.small&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>]
 </span></span></code></pre></div><h2 id="plan-and-apply-the-configuration">Plan and apply the configuration</h2>
 <p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">Resource Creation</span></p>
 <p>Once you have created the previously mentioned files or downloaded the project source code from GitLab (link at the beginning of the post), you should have a file structure similar to the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/kubernetes-civo-opentofu ❯ tree                       
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/kubernetes-civo-opentofu ❯ tree                       
 </span></span><span style="display:flex;"><span>.
 </span></span><span style="display:flex;"><span>├── LICENSE
 </span></span><span style="display:flex;"><span>├── README.md
@@ -612,70 +573,70 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
 </span></span><span style="display:flex;"><span>├── terraform.tfvars
 </span></span><span style="display:flex;"><span>└── variables.tf
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> directories, <span style="color:#ae81ff">15</span> files
+</span></span><span style="display:flex;"><span><span style="color:#d19a66">3</span> directories, <span style="color:#d19a66">15</span> files
 </span></span></code></pre></div><p><strong>Warning:</strong> The <code>-auto-approve</code> option should be handled with great care, as it will apply changes automatically without asking for confirmation.</p>
 <p>Next, run the following commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tofu init 
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tofu init 
 </span></span><span style="display:flex;"><span>tofu plan
 </span></span><span style="display:flex;"><span>tofu apply -auto-approve 
 </span></span></code></pre></div><p>Once the resources have been created, you should see an output similar to the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------------------
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------------------
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>civo_network.civo_network_cluster: Creating...
-</span></span><span style="display:flex;"><span>civo_network.civo_network_cluster: Creation complete after 1s <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>e116d8d0-b22b-4177-8f17-18ee46a83b58<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>civo_network.civo_network_cluster: Creation <span style="color:#e5c07b">complete</span> after 1s <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>e116d8d0-b22b-4177-8f17-18ee46a83b58<span style="color:#56b6c2">]</span>
 </span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Creating...
-</span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Creation complete after 4s <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>74ace676-e035-4d62-8cdd-3a4c74db6785<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Creation <span style="color:#e5c07b">complete</span> after 4s <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>74ace676-e035-4d62-8cdd-3a4c74db6785<span style="color:#56b6c2">]</span>
 </span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Creating...
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#f92672">[</span>10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#f92672">[</span>20s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#f92672">[</span>30s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#f92672">[</span>40s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#f92672">[</span>50s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#f92672">[</span>1m0s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Creation complete after 1m6s <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>30cae189-1734-4e8a-9989-fe754a554bbd<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Creating...
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>20s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>30s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>40s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>50s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>1m0s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>1m10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>1m20s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>1m30s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>1m40s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>1m50s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>2m0s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>2m10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>2m20s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>2m30s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>2m40s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>2m50s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>3m0s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>3m10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>3m20s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>3m30s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>3m40s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>3m50s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>4m0s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>4m10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Still creating... <span style="color:#f92672">[</span>4m20s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Creation complete after 4m22s <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>pool-production-back-end<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#56b6c2">[</span>10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#56b6c2">[</span>20s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#56b6c2">[</span>30s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#56b6c2">[</span>40s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#56b6c2">[</span>50s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still creating... <span style="color:#56b6c2">[</span>1m0s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Creation <span style="color:#e5c07b">complete</span> after 1m6s <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>30cae189-1734-4e8a-9989-fe754a554bbd<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Creating...
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>20s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>30s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>40s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>50s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>1m0s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>1m10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>1m20s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>1m30s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>1m40s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>1m50s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>2m0s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>2m10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>2m20s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>2m30s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>2m40s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>2m50s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>3m0s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>3m10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>3m20s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>3m30s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>3m40s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>3m50s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>4m0s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>4m10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Still creating... <span style="color:#56b6c2">[</span>4m20s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Creation <span style="color:#e5c07b">complete</span> after 4m22s <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>pool-production-back-end<span style="color:#56b6c2">]</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Apply complete! Resources: <span style="color:#ae81ff">4</span> added, <span style="color:#ae81ff">0</span> changed, <span style="color:#ae81ff">0</span> destroyed.
+</span></span><span style="display:flex;"><span>Apply complete! Resources: <span style="color:#d19a66">4</span> added, <span style="color:#d19a66">0</span> changed, <span style="color:#d19a66">0</span> destroyed.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Outputs:
-</span></span><span style="display:flex;"><span>kubernetes_cluster_ready <span style="color:#f92672">=</span> true
-</span></span><span style="display:flex;"><span>kubernetes_cluster_status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ACTIVE&#34;</span>
-</span></span><span style="display:flex;"><span>kubernetes_cluster_version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.29.2-k3s1&#34;</span>
-</span></span><span style="display:flex;"><span>kubernetes_cluster_endpoint <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://212.2.246.232:6443&#34;</span>
-</span></span><span style="display:flex;"><span>kubernetes_cluster_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;30cae189-1734-4e8a-9989-fe754a554bbd&#34;</span>
-</span></span><span style="display:flex;"><span>kubernetes_cluster_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;k3s-civo-opentofu&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_cluster_ready</span> <span style="color:#56b6c2">=</span> <span style="color:#e5c07b">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_cluster_status</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;ACTIVE&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_cluster_version</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;1.29.2-k3s1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_cluster_endpoint</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;https://212.2.246.232:6443&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_cluster_id</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;30cae189-1734-4e8a-9989-fe754a554bbd&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">kubernetes_cluster_name</span> <span style="color:#56b6c2">=</span> <span style="color:#98c379">&#34;k3s-civo-opentofu&#34;</span>
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">Save and Switch Cluster Configuration</span></p>
 <p>This command switches to the specified Kubernetes cluster. You should use the cluster name defined in the <code>kubernetes_cluster_name</code> variable; in my case, it is <code>k3s-civo-opentofu</code>. It then saves this configuration as the default and activates it for immediate use.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>civo kubernetes config k3s-civo-opentofu --save --switch 
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>civo kubernetes config k3s-civo-opentofu --save --switch 
 </span></span></code></pre></div><p><span style="color: dark; font-weight: bold; font-style: italic; font-size: 1.5em;">Validating the Connection to the Cluster</span></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~ ❯ k get nodes
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~ ❯ k get nodes
 </span></span><span style="display:flex;"><span>NAME                                                     STATUS     ROLES    AGE     VERSION
 </span></span><span style="display:flex;"><span>k3s-k3s-civo-opentofu-0f4a-dae818-node-pool-c109-ehwpv   Ready      &lt;none&gt;   23m     v1.29.2+k3s1
 </span></span><span style="display:flex;"><span>k3s-k3s-civo-opentofu-0f4a-dae818-node-pool-c109-2nx3f   Ready      &lt;none&gt;   23m     v1.29.2+k3s1
@@ -687,27 +648,27 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
 <ol>
 <li>Create a destroy plan and preview the changes to your infrastructure with the following command:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tofu plan -destroy
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tofu plan -destroy
 </span></span></code></pre></div><ol start="2">
 <li>To delete the resources and all data, run:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tofu destroy
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tofu destroy
 </span></span></code></pre></div><ol start="3">
 <li>Enter <code>yes</code> to confirm. The output is similar to the following:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------------------
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>------------------------------------------------------------------------
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Destroying... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>pool-production-back-end<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Destruction complete after 1s
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Destroying... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>13b3c6d0-743a-4cc3-9372-3e50514a2577<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still destroying... <span style="color:#f92672">[</span>10s elapsed<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Destruction complete after 11s
-</span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Destroying... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>e92d51b9-3030-4fcd-9d6c-6347634ef88e<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Destruction complete after 3s
-</span></span><span style="display:flex;"><span>civo_network.network_cluster_civo: Destroying... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>7ae394dd-9dc5-4166-8927-ad3bf7d7954c<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>civo_network.network_cluster_civo: Destruction complete after 9s
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Destroying... <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>pool-production-back-end<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_node_pool.back-end_pool<span style="color:#56b6c2">[</span>0<span style="color:#56b6c2">]</span>: Destruction <span style="color:#e5c07b">complete</span> after 1s
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Destroying... <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>13b3c6d0-743a-4cc3-9372-3e50514a2577<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Still destroying... <span style="color:#56b6c2">[</span>10s elapsed<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_kubernetes_cluster.civo_cluster: Destruction <span style="color:#e5c07b">complete</span> after 11s
+</span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Destroying... <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>e92d51b9-3030-4fcd-9d6c-6347634ef88e<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_firewall.civo_firewall_cluster: Destruction <span style="color:#e5c07b">complete</span> after 3s
+</span></span><span style="display:flex;"><span>civo_network.network_cluster_civo: Destroying... <span style="color:#56b6c2">[</span><span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span>7ae394dd-9dc5-4166-8927-ad3bf7d7954c<span style="color:#56b6c2">]</span>
+</span></span><span style="display:flex;"><span>civo_network.network_cluster_civo: Destruction <span style="color:#e5c07b">complete</span> after 9s
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Apply complete! Resources: <span style="color:#ae81ff">0</span> added, <span style="color:#ae81ff">0</span> changed, <span style="color:#ae81ff">4</span> destroyed.
+</span></span><span style="display:flex;"><span>Apply complete! Resources: <span style="color:#d19a66">0</span> added, <span style="color:#d19a66">0</span> changed, <span style="color:#d19a66">4</span> destroyed.
 </span></span></code></pre></div>
           </article>
         </div>
@@ -739,15 +700,15 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
             <h5>Tags</h5>
             <ul class="tags-ul list-unstyled list-inline">
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/cncf"
+              <li class="list-inline-item"><a href="https://xavierllauca.com/tags/cncf"
                 target="_blank"
               >cncf</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/opentofu"
+              <li class="list-inline-item"><a href="https://xavierllauca.com/tags/opentofu"
                 target="_blank"
               >opentofu</a></li>
               
-              <li class="list-inline-item"><a href="http://localhost:1313/tags/kubernetes"
+              <li class="list-inline-item"><a href="https://xavierllauca.com/tags/kubernetes"
                 target="_blank"
               >kubernetes</a></li>
               
@@ -761,22 +722,22 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
             <div class="social-content">
               <ul class="list-inline">
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f">
+                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fxavierllauca.com%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f">
                     <i class="fab fa-linkedin"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://twitter.com/share?text=Deploying%20a%20Civo%20Kubernetes%20Cluster%20with%20Opentofu&url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f">
+                  <a target="_blank" href="https://twitter.com/share?text=Deploying%20a%20Civo%20Kubernetes%20Cluster%20with%20Opentofu&url=https%3a%2f%2fxavierllauca.com%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Deploying%20a%20Civo%20Kubernetes%20Cluster%20with%20Opentofu: http%3a%2f%2flocalhost%3a1313%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Deploying%20a%20Civo%20Kubernetes%20Cluster%20with%20Opentofu: https%3a%2f%2fxavierllauca.com%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f">
                     <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
-                  <a target="_blank" href='mailto:?subject=Deploying%20a%20Civo%20Kubernetes%20Cluster%20with%20Opentofu&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f'>
+                  <a target="_blank" href='mailto:?subject=Deploying%20a%20Civo%20Kubernetes%20Cluster%20with%20Opentofu&amp;body=Check%20out%20this%20site https%3a%2f%2fxavierllauca.com%2fblogs%2fcivo-k8s-cluster-with-opentofu%2f'>
                     <i class="fa fa-envelope"></i>
                   </a>
                 </li>
@@ -789,7 +750,21 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-9 p-4">
-        
+        <script src="https://giscus.app/client.js"
+        data-repo="xllauca/xllauca.github.io"
+        data-repo-id="R_kgDOLaghNg"
+        data-category="Ideas"
+        data-category-id="DIC_kwDOLaghNs4Ch10-"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="noborder_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
       </div>
     </div>
   </div>
@@ -842,46 +817,11 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
   </div><footer>
     
  
- 
-<div class="container py-3" id="recent-posts">
-    
-    
-    <div class="h3 text-center text-secondary py-3">
-        Recent Posts
-    </div>
-    <div class="row justify-content-center">
-        
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-header">
-                    <a href="/blogs/civo-k8s-cluster-with-opentofu/">
-                        <img src="/images/post-tofu.jpg" class="card-img-top" alt="Deploying a Civo Kubernetes Cluster with Opentofu">
-                    </a>
-                </div>
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="/blogs/civo-k8s-cluster-with-opentofu/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Deploying a Civo Kubernetes Cluster with Opentofu">Deploying a Civo …</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p>This post explains how to deploy a Civo Kubernetes cluster using OpenTofu. :)</p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Aug 9, 2024</span>
-                    <a href="/blogs/civo-k8s-cluster-with-opentofu/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</div>
 
 <div class="text-center pt-2">
     
     <span class="px-1">
-        <a href="https://github.com" aria-label="github">
+        <a href="https://github.com/xllauca" aria-label="github">
             <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
                 <path id="footer-socialNetworks-github-svg-path"
                     d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
@@ -908,7 +848,7 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
 
     
     <span class="px-1">
-        <a href="https://linkedin.com" aria-label="linkedin">
+        <a href="https://linkedin.com/in/xllauca" aria-label="linkedin">
             <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
                 viewBox="0 0 512 512">
                 <rect width="512" height="512" fill="#0077b5" rx="15%" />
@@ -921,7 +861,7 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
     
 
     
-    <a href="https://twitter.com" aria-label="twitter">
+    <a href="https://twitter.com/xllauca" aria-label="twitter">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
             <path fill="#03a9f4"
                 d="M42,37c0,2.762-2.239,5-5,5H11c-2.762,0-5-2.238-5-5V11c0-2.762,2.238-5,5-5h26c2.761,0,5,2.238,5,5 V37z" />
@@ -932,82 +872,35 @@ Deploying a Civo Kubernetes Cluster with Opentofu | Hugo Profile
     
 
     
-    <a href="https://instagram.com" aria-label="instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
-            <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
-                gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#fd5" />
-                <stop offset=".328" stop-color="#ff543f" />
-                <stop offset=".348" stop-color="#fc5245" />
-                <stop offset=".504" stop-color="#e64771" />
-                <stop offset=".643" stop-color="#d53e91" />
-                <stop offset=".761" stop-color="#cc39a4" />
-                <stop offset=".841" stop-color="#c837ab" />
-            </radialGradient>
-            <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
-            <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
-                gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#4168c9" />
-                <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
-            </radialGradient>
-            <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
-            <path fill="#fff"
-                d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
-            <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
-            <path fill="#fff"
-                d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
-        </svg>
-    </a>
-    
 
-    
-    <a href="https://facebook.com" aria-label="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
-            <path fill="#3F51B5"
-                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
-            <path fill="#FFF"
-                d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z" />
-        </svg>
-    </a>
     
 </div><div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
-            
-                <div class="pb-2">
-                    <a href="http://localhost:1313/" title="Hugo Profile">
-                        <img alt="Footer logo" src="/fav.png"
-                            height="40px" width="40px">
-                    </a>
-                </div>
-            
-            &copy; 2024  All rights reserved
+            <div class="pb-2">
+                <a href="https://xavierllauca.com/" title="Xavier Llauca">
+
+                    <div style="height: 40px; width: 40px;"></div>
+
+                </a>
+            </div>
+            Xavier Llauca &copy; 2024  All Rights Reserved
             <div class="text-secondary">
                 Made with
                 <span class="text-danger">
                     &#10084;
                 </span>
-                and
-                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
-                    title="Designed and developed by gurusabarish">
-                    Hugo Profile
+                in Ecuador 🇪🇨
                 </a>
             </div>
         </div>
     </div>
-</div>
-</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
+    if (document.body.className.includes("light")) {
         document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
     }
-
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
